@@ -1,0 +1,39 @@
+//Input Format: The first line of input will contain a single integer T, denoting the number of test cases.
+//Each test case consists of multiple lines of input.
+//The first line of each test case contains two space-separated integers N and X — the number of items and the minimum freshness value an item should have.
+//The second line contains N space-separated integers, the array A, denoting the freshness value of each item.
+//The third line contains N space-separated integers, the array  B, denoting the cost of each item.
+//Output Format:  For each test case, output on a new line, the total cost of the groceries Chef buy
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Codechef
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner sc=new Scanner(System.in);
+        int T=sc.nextInt();
+        for(int t=0;t<T;t++)
+        {
+            int N= sc.nextInt();        //no. of items
+            int X=sc.nextInt();         //min freshness value
+        
+            int cost=0;
+            int[] A=new int[N];
+            for(int i=0; i< N;i++)     //freshness value of each item
+                A[i]=sc.nextInt();
+        
+            int[] B=new int[N];         //cost of each item
+            for(int k=0;k<N;k++)       
+                B[k]=sc.nextInt();     
+                
+            for(int k=0;k<N;k++){     
+                if(A[k]>=X){           
+                    cost += B[k];      
+                }
+            }
+            System.out.println(cost);
+        }
+    }
+}
